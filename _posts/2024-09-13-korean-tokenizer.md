@@ -34,10 +34,15 @@ GLUE 데이터셋과 유사하게 STS, NLI 등 다양한 NLP task를 수행할 �
 이렇게 형태소 분석을 수행한 후 BPE와 같은 tokenization을 추가로 수행하면 앞서 'ㅋㅋ'와 같이 \<Unknown>으로 처리되는 token들까지도 의미를 갖는 한 단위로 간주될 수 있다.
 
 ### KoBERT tokenizer
-SentencePiece tokenizer를 사용한다. 공백을 고려하지 않고 전체 텍스트를 하나의 문자열로 취급하기 때문에 공백이 명확하지 않은 교착어들에서도 잘 작동한다.  
+SentencePiece tokenizer를 사용한다. 공백을 고려하지 않고 전체 텍스트를 하나의 문자열로 취급하기 때문에 공백으로 의미가 구분되지 않는 교착어들에서도 잘 작동한다.  
 
-순위가 높은 모델들의 tokenizer를 알아보고 비교해보는 과정을 수행해봐야겠다.
+## 프로젝트에 적용하기 위해서?
+한국어를 기반으로 NLP task를 수행하기 위해서 형태소 분석기, Tokenizer 등 전처리 방법을 고민하고 있다. 적당히 생각나는 방법은 두 가지이다.  
+1. SentencePiece와 같이 다양한 언어에 적합한 tokenizer를 가지고 있는 모델을 선정해서 해당 모델의 Tokenizer를 사용한다.  
+2. 데이터 특성에 적합한 형태소 분석기(일반적으로 Mecab-ko)를 사용해서 형태소 분석을 우선 수행한 후 영어 모델을 사용한다.  
 
+아직 경험해보지 못해 어떤 방법이 맞는 것이고, 더 일반적으로 사용되는 방법이 뭔지 모르겠다. 공부해보도록 해야겠다.
+<br><br>
 > **출처**  
 [KoNLPy](https://konlpy.org/ko/latest/morph/#comparison-between-pos-tagging-classes)  
 [KLUE](https://arxiv.org/pdf/2105.09680)
