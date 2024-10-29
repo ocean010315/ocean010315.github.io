@@ -131,14 +131,14 @@ comments:
   giscus:
     repo: ocean010315/ocean010315.github.io # <gh-username>/<repo>
     repo_id: R_kgDOMu0iQw
-    category:
-    category_id:
-    mapping: title # optional, default to 'pathname'
-    strict: '0' # optional, default to '0'
-    input_position: 'top' # optional, default to 'bottom'
+    category: General
+    category_id: DIC_kwDOMu0iQ84CiUTo
+    mapping: # optional, default to 'pathname'
+    strict: # optional, default to '0'
+    input_position: # optional, default to 'bottom'
     lang: 'ko' # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
-    data-theme: 'noborder_light'
+    data-theme: noborder_light
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
