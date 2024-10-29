@@ -4,6 +4,7 @@ date: 2024-09-10 00:00:00 +09:00
 categories: [github.io, chirpy 세팅]
 tags: [chirpy, theme]
 use_math: true
+comments: true
 ---
 
 ### Chirpy 선택 이유
