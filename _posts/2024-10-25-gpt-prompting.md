@@ -4,6 +4,7 @@ date: 2024-10-25 00:00:00 +09:00
 categories: [NLP, 구현]
 tags: [GPT, Prompt]
 use_math: true
+comments: true
 ---
 
 ### 배경
