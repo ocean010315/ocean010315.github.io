@@ -1,5 +1,5 @@
 ---
-title: Week 10 - Data Centric
+title: Week 11 - Data Centric
 date: 2024-11-01 00:00:00 +09:00
 categories: [Naver Boostcamp AI Tech 7기, 주간 학습 기록]
 tags: [NLP, Data Centric]
