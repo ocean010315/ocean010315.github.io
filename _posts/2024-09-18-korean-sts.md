@@ -46,6 +46,7 @@ generator에서 나온 token을 보고 discriminator에서 `real` token인지, `
 Decoder 기반 모델이지만 출력을 잘 조정한다면 STS에도 적용해볼 수 있을 것인데.. 오버 엔지니어링인가 싶어 보류.  
 
 <br>
+
 > **출처**  
 [KLUE Hugging Face](https://huggingface.co/datasets/klue/klue)  
 [KLUE github](https://github.com/KLUE-benchmark/KLUE?tab=readme-ov-file)  
