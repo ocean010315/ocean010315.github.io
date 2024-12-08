@@ -54,4 +54,4 @@ use_math: true
     python manage.py makemigrations User
     python manage.py migrate User
     ```
-    이 때 [이전 포스트]("https://ocean010315.github.io/posts/django-mysql-1/")와 같이 프로젝트와 MySQL을 미리 연동하지 않았다면 `User`를 빼고 전체적으로 연동이 되도록 한다.
+    이 때 [이전 포스트](https://ocean010315.github.io/posts/django-mysql-1/)와 같이 프로젝트와 MySQL을 미리 연동하지 않았다면 `User`를 빼고 전체적으로 연동이 되도록 한다.
