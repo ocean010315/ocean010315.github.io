@@ -25,7 +25,8 @@ use_math: true
     ]
     ```
 
-3. `User/models.py`에 생성할 테이블의 구조를 설계한다. 난 단순한 CRUD 복습을 위한 거라 이름, 아이디 대용 이메일, 비밀번호에 해당하는 필드만 만들었다.  
+### 테이블 생성, migrate 수행
+1. `User/models.py`에 생성할 테이블의 구조를 설계한다. 난 단순한 CRUD 복습을 위한 거라 이름, 아이디 대용 이메일, 비밀번호에 해당하는 필드만 만들었다.  
     ```python
     from django.db import models
 
@@ -48,7 +49,7 @@ use_math: true
     > **`Meta` 클래스**  
     Django의 `models.Model`라는 추상 클래스를 상속받아 모델을 구현할 경우 `Meta` 클래스를 내부에 선언함으로써 메타 데이터 정보를 부여할 수 있다. 정렬 방법, 테이블의 이름 등을 지정할 수 있다. 개별 옵션은 [여기](https://docs.djangoproject.com/en/5.1/ref/models/options/)에서 확인하기!
 
-4. 이제 migrate를 한다.
+2. 이제 migrate를 한다.
     ```bash
     python manage.py makemigrations User
     python manage.py migrate User
