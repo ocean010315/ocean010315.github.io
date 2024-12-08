@@ -1,5 +1,5 @@
 ---
-title: Django와 MySQL 연동하기
+title: Django와 MySQL 연동하기 - 1
 date: 2024-12-05 00:00:00 +09:00
 categories: [개발 일지, Django]
 tags: [Django, MySQL, Backend]
