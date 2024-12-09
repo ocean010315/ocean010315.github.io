@@ -25,6 +25,29 @@ use_math: true
     ]
     ```
 
+3. 프로젝트 폴더의 `urls.py`에 앱을 등록하고, 앱 디렉토리 내에도 `urls.py`를 생성해서 진행할 작업에 대한 url을 작성한다.
+    ```python
+    # {project}/urls.py
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('user/', include('user.urls')),
+    ]
+
+    # {app_dir}/urls.py
+    from django.urls import path, include
+    from . import views
+    from rest_framework import urls
+
+    urlpatterns = [
+        path('signup/', views.UserCreate.as_view(), name='signup'),
+        path('login/', views.UserLogin.as_view(), name='login'),
+        path('mypage/', view.UserPage.as_view(), name='mypage'),
+    ]
+    ```
+
 ### 테이블 생성, migrate 수행
 1. `User/models.py`에 생성할 테이블의 구조를 설계한다. 난 단순한 CRUD 복습을 위한 거라 이름, 아이디 대용 이메일, 비밀번호에 해당하는 필드만 만들었다.  
     ```python
