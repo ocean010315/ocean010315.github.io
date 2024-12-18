@@ -52,7 +52,7 @@ $ source ~/.zshrc
 - `brew cleanup {package_name}`: 해당 패키지의 최신 버전 외 버전들 제거
 - `brew uninstall {package_name}`: 해당 패키지 삭제
 
-**설치 예제**  
+### GitHub 설치 및 인증
 우선 brew를 한 번 업데이트 후 가장 많이 쓰는 git을 한 번 설치해보자.  
 ```zsh
 brew update
@@ -70,6 +70,54 @@ brew install git
 git --version
 # git version 2.47.1
 ```
+
+**.git config에 정보 저장**  
+```zsh
+git config --global user.name {GitHub 이름}
+git config --global user.email {GitHub 이메일}
+```
+위와 같이 설정하고 `git config list`에 내가 지정한 정보가 뜨면 올바르게 지정한 것이다.  
+
+**GitHub SSH 인증**  
+`config`에 개인정보를 저장했을 때 Repo에 접근하고 commit하는 등의 간단한 작업은 가능하지만, 내가 MacBook이 인증된 것은 아니기 때문에 SSH 인증을 추가로 진행한다.  
+MacBook은 터미널을 통해 기본적으로 SSH 접근이 바로 가능하기 때문에 키 생성만 해주면 된다.  
+
+먼저 아래 명령어를 입력해서 ssh key가 있는지 확인한다.  
+```zsh
+cat ~/.ssh/id*
+```
+정보가 뜨지 않으면 없는 것이므로 아래 명령어를 입력해서 생성해준다.  
+```zsh
+ssh-keygen -t ed25519 -C "email@domain.com"
+```
+이 때 경로나 비밀번호를 입력하라고 하는데 경로는 디폴트로 두는 것을 추천한다. 나중에 매번 설정해줘야 할 일이 생길지도..  
+그리고 [여기](https://docs.github.com/ko/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)에 들어가서 "ssh-agent에 SSH 키 추가"를 따라한다. 아래 내용을 옮겨왔으니 따라만 해도 무방!
+```zsh
+# 1. 백그라운드에서 ssh-agent 시작
+eval "${ssh-agent-s}
+> Agent pid 59566
+```
+```zsh
+# 2. ~/.ssh/config 생성
+touch ~/.ssh/config
+
+# config 안에 아래 내용 추가(vim, vscode 등 자유롭게 사용)
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+```
+```zsh
+# 3. ssh-agent에 SSH private 키 추가
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
+이제 GitHub 웹에 접속해서 `Profile > Settings > SSH and GPG keys`에 들어가서 `New SSH key`를 클릭한다.  
+Title을 입력하고 Key Type은 `Authentication Key`로 설정한다. Signing Key는 아직 필요 없어서 안 했는데, 필요하다면 같은 SSH Key로 생성할 수도 있다. 
+- Authentication Key: 레포 접속 등 내가 누구인지에 대한 인증
+- Signing Key: commit이 온전히 인증된 나로부터 발생
+
+이제 `vim ~/.ssh/id_ed25519.pub`으로 파일을 열고 `ssh-ed25519`로 시작하는 내용을 전부 복사하여 Key에 붙여넣기 한다.
 
 ### Python 개발 환경 세팅하기
 나는 지금 AI를 공부하고 있기 때문에 Python을 가장 많이 사용한다. 따라서 우선 Python 환경을 세팅해주도록 하겠다.  
