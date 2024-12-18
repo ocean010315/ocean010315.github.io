@@ -91,7 +91,9 @@ cat ~/.ssh/id*
 ssh-keygen -t ed25519 -C "email@domain.com"
 ```
 이 때 경로나 비밀번호를 입력하라고 하는데 경로는 디폴트로 두는 것을 추천한다. 나중에 매번 설정해줘야 할 일이 생길지도..  
-그리고 [여기](https://docs.github.com/ko/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)에 들어가서 "ssh-agent에 SSH 키 추가"를 따라한다. 아래 내용을 옮겨왔으니 따라만 해도 무방!
+
+그리고 비밀번호를 설정했다면 [여기](https://docs.github.com/ko/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)에 들어가서 "ssh-agent에 SSH 키 추가"를 따라한다. 아래 내용을 옮겨왔으니 따라만 해도 무방!  
+ssh-agent로 비밀번호를 관리하는 방법이다. 비밀번호를 입력하지 않았다면 이 과정은 생략해도 된다.  
 ```zsh
 # 1. 백그라운드에서 ssh-agent 시작
 eval "${ssh-agent-s}
