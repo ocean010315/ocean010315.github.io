@@ -1,7 +1,7 @@
 ---
 title: Greedy Algorithm
 date: 2024-12-24 00:00:00 +09:00
-categories: [스터디, 코딩테스트]
+categories: [스터디, 알고리즘]
 tags: [Greedy]
 use_math: true
 ---
