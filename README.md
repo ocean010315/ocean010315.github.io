@@ -3,5 +3,5 @@ https://ocean010315.github.io
 ### gif test
 
 <div align="center">
-<img src="flow_all.gif" width="200">
+<video src="flow_all.mp4" width="200" autoplay loop muted></video>
 </div>
