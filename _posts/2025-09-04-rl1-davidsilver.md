@@ -33,7 +33,7 @@ A. 목표는 '보스를 잡는 것'이 맞지만, agent의 학습 과정에서 �
 
 ### Environment
 <div align="center">
-<img src="../assets/img/250904_rl1/rl1_environment.png" width="300">
+<img src="../assets/img/250904_rl1/environment.png" width="300">
 </div>
 
 - 각 timestep $t$에서 agent는:
@@ -122,6 +122,53 @@ $$ \mathcal{R}^a_s = \mathbb{E}[R_{t+1}=s'|S_t=s, A_t=a] $$
 - Actor Critic
   - policy와 value function을 적절히 조합
   - `Policy`, `Value Function`
-- 
+- Model Free
+  - real world를 environment로 하여 실제 action을 수행하며 state와 reward를 수신
+  - `No Model`
+- Model Based
+  - real world의 역할을 할 수 있는 model을 정의해서 해당 model로부터 state와 reward를 수신
+  - `Policy and/or Value Function`, `Model`
+
+### RL Taxonomy
+<div align="center">
+<img src="../assets/img/250904_rl1/taxonomy.png" width="400">
+</div>
 
 ## Problems within Reinforcement Learning
+### Learning & Planning
+sequential한 decision making을 위해서는 두 가지 요소가 필요
+- Reinforcement Learning
+  - <u>주로 agent가 environment를 모름 (model이 정의되어 있지 않음)</u>
+  - agent가 environment와 상호작용
+  - agent가 자신의 policy를 개선
+- Planning
+  - <u>environment의 model이 알려져 있음</u>
+  - 외부적인 상호작용 없이 agent가 자신이 알고 있는 model을 통해 수행
+  - agent가 자신의 policy를 개선
+
+RL을 수행하려면 학습을 통해 model을 파악 → planning 수행
+
+- Ex. Atari Game
+  - Reinforcement Learning
+    - 어떤 게임에 대해서 수행할지 모르기 때문에, 게임의 규칙을 모름
+    - 실제 action을 수행하며 상호작용
+    - agent가 조이스틱을 통해 어떤 action을 할지 결정 → pixel과 score를 통해 학습
+  - Planning
+    - 이제 규칙을 알았음
+    - query: 'If I take action a from state s...'
+      - 다음 state는 무엇?
+      - 얻어지는 score는 무엇?
+    - 최적의 policy 탐색을 위해 planning 수행 (e.g. tree search)
+
+### Exploration & Exploitation
+- RL: trial and error → 최적의 policy를 학습
+- environment로부터의 경험을 통해 너무 많은 reward를 잃지 않으면서 최적의 policy를 탐색해야 함
+- `Exploration`: environment로부터 많은 새 정보를 얻을 수 있음
+- `Exploitation`: 이미 알고 있는(습득한) 정보를 통해 reward를 최대화
+- 두 개가 trade-off 관계, 적절한 밸런싱이 필요
+
+### Prediction & Control
+- `Prediction`: 주어진 policy를 활용해서 미래를 예측
+- `Control`: 최적의 policy가 되기 위해 미래를 최적화
+- step by step으로 policy를 최적화함에 따라 최대의 reward를 얻을 수 있는 policy로 업데이트
+
