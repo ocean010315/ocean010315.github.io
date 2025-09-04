@@ -68,9 +68,9 @@ $$ S_t = f(H_t) $$
 ### Markov
 - ⭐️ Information State (Markov state)  
   - 과거의 모든 유용한 정보를 포함하는 상태
-  - state $S_t$가 Markov일 필요충분조건: $\mathbb{P}[S_{t+1}|S_t]=\mathbb{P}[S_{t+1}|S_1,...,S_t]$
+  - state $S_t$ 가 Markov일 필요충분조건: $\mathbb{P}[S_{t+1}|S_t]=\mathbb{P}[S_{t+1}|S_1,...,S_t]$
   - "현재가 주어졌을 때 미래는 과거와 독립적이다": $H_{1:t} \to S_t \to H_{t+1:\infty}$
-  - $S^e_t$와 $H_t$는 Markov
+  - $S^e_t$ 와 $H_t$ 는 Markov
 - Fully Observable Environments
   - $O_t = S^a_t = S^e_t$: agent가 environment로부터 state를 직접 발견
   - ⭐️ **`Markov Decision Process (MDP)`**
@@ -108,6 +108,7 @@ $$V_{\pi} = \mathbb{E}_\pi[R_{t+1}+\gamma R_{t+2} + \gamma ^2 R_{t+3} + ... | S_
 - $\mathcal{R}$: 바로 다음 reward를 예측 (value function과 달리 누적이 아님)
 
 $$ \mathcal{P}^a_{ss'} = \mathbb{P}[S_{t+1}=s'|S_t=s, A_t=a] $$
+
 $$ \mathcal{R}^a_s = \mathbb{E}[R_{t+1}=s'|S_t=s, A_t=a] $$
 
 ### RL Agent 분류
