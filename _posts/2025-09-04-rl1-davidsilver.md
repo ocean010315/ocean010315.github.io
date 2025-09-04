@@ -68,7 +68,7 @@ $$ S_t = f(H_t) $$
 ### Markov
 - ⭐️ Information State (Markov state)  
   - 과거의 모든 유용한 정보를 포함하는 상태
-  - state $S_t$ 가 Markov일 필요충분조건: $\mathbb{P}[S_{t+1}|S_t]=\mathbb{P}[S_{t+1}|S_1,...,S_t]$  
+  - state $S_t$ 가 Markov일 필요충분조건: $\mathbb{P} [S_{t+1}|S_t] = \mathbb{P} [S_{t+1}|S_1, ..., S_t]$  
   - "현재가 주어졌을 때 미래는 과거와 독립적이다": $H_{1:t} \to S_t \to H_{t+1:\infty}$
   - $S^e_t$ 와 $H_t$ 는 Markov
 - Fully Observable Environments
@@ -122,7 +122,6 @@ $$ \mathcal{R}^a_s = \mathbb{E}[R_{t+1}=s'|S_t=s, A_t=a] $$
 - Actor Critic
   - policy와 value function을 적절히 조합
   - `Policy`, `Value Function`
-
-(TBU)
+- 
 
 ## Problems within Reinforcement Learning
