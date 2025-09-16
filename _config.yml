@@ -22,6 +22,7 @@ description: >- # used by seo meta and the atom feed
   Happy Coding
 
 # Math equation
+math: true
 markdown: kramdown
 highlighter: rouge
 lsi: false
@@ -136,7 +137,7 @@ comments:
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
-    lang: 'ko' # optional, default to the value of `site.lang`
+    lang: "ko" # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
     data-theme: noborder_light
 
