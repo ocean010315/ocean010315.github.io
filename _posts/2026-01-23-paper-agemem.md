@@ -25,7 +25,7 @@ LTM과 STM은 함께 사용됐을 때 유한한 길이의 context window의 한�
 ### 기존의 Agentic Memory 구조들
 
 <div align="center">
-<img src="../assets/img/papers/260123_agemem/fig1.png" width="700">
+<img src="../assets/img/papers/260123_AgeMem/fig1.png" width="700">
 </div>
 
 **[ STM 전략 ]**  
@@ -73,7 +73,7 @@ STM과 LTM을 agent의 의사결정 단계에 포함시킨다.
 STM과 LTM을 통합적으로 관리하기 위해 agent가 활용할 수 있는 tool들을 아래와 같이 설계했다.
 
 <div align="center">
-<img src="../assets/img/papers/260123_agemem/table1.png" width="300">
+<img src="../assets/img/papers/260123_AgeMem/table1.png" width="300">
 </div>
 
 > agent와 강화학습을 다루고 있기 때문에 수식 표기는 아래 접힌 내용을 참고하면 좋을 것이다.
